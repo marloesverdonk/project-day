@@ -52,26 +52,48 @@ function doSomethingWithObjects() {
         img.style.position = "absolute"
         img.style.bottom = getRandomInt(0, 30) + "rem"
         img.style.left = getRandomInt(0, 40) + "rem"
-        img.addEventListener("click", function(){addToFoundItems(this) } )
-
-        //console.log(img.style.left)
+        img.addEventListener("click", function () { 
+            addToFoundItems(this) 
+            displayInFooter()
+        })
 
         main.appendChild(img)
     }
-    
+
 }
-
 doSomethingWithObjects()
-
 
 const foundItems = []
 
 function addToFoundItems(image) {
     if (foundItems.includes(image) == false) {
         foundItems.push(image)
-        console.log(foundItems)
+        // console.log(foundItems)
     }
 }
 
-//console.log(addToFoundItems)
+function displayInFooter() {
+    //reset inner HTML foundItemsSection --> empty string
+    const footer = document.getElementById('foundItems')
+    footer.innerHTML = '';
+    // document.footer.getElementById("foundItems").innerHTML = ""
+    //show image of every item of foundItems-array
+    for (let i = 0; i < foundItems.length; i++) {
+        
+        // // Gather -> what? where?
+        const image = foundItems[i]
+        image.style.bottom = '1rem'
+        // console.log(image)
+        // // Create Elements
+        // const img = document.createElement('img')
 
+        // // Adjust
+        // img.alt = image.name
+        // img.src = image.url
+
+        // console.log('HEEEELLLOOOO')
+        // // Display
+
+        footer.appendChild(image)
+    }
+}

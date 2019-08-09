@@ -31,7 +31,7 @@ const images = [
         id: "searchField",
     },
 
-    
+
 ]
 
 function getRandomInt(a, b) {
@@ -44,7 +44,7 @@ function doSomethingWithObjects() {
         const currentObject = images[i]
 
         const main = document.getElementById("searchField")
-        
+
         const img = document.createElement('img')
         img.alt = currentObject.name
         img.src = currentObject.src
@@ -52,16 +52,26 @@ function doSomethingWithObjects() {
         img.style.position = "absolute"
         img.style.bottom = getRandomInt(0, 30) + "rem"
         img.style.left = getRandomInt(0, 40) + "rem"
+        img.addEventListener("click", function(){addToFoundItems(this) } )
 
-        console.log(img.style.left)
+        //console.log(img.style.left)
 
         main.appendChild(img)
-
-
     }
+    
 }
+
 doSomethingWithObjects()
 
 
+const foundItems = []
 
+function addToFoundItems(image) {
+    if (foundItems.includes(image) == false) {
+        foundItems.push(image)
+        console.log(foundItems)
+    }
+}
+
+//console.log(addToFoundItems)
 

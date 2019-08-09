@@ -1,0 +1,21 @@
+body{
+    height: 100%;
+    width: 100%;
+    background-image: url("https://www.stourtonestates.co.uk/wp-content/uploads/2017/06/countryside-2326787_1920.jpg")
+
+}
+
+#searchField {
+    width: 100%;
+    height:80vh;
+    position: relative;
+}
+
+footer{
+    height:20vh;
+    position: relative;
+}
+
+img{
+    max-height: 3rem;
+}
